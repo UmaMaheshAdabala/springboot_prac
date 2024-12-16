@@ -1,13 +1,19 @@
 package com.umesh.demoWeb.model;
 
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import org.springframework.stereotype.Component;
 
+@Component
+@Entity
 public class Product {
+    @Id
     int proId;
     String proName;
     int price;
 
-    public Product(int proId, String proName, int price) {
+    public Product() {
         this.proId = proId;
         this.proName = proName;
         this.price = price;
@@ -37,4 +43,12 @@ public class Product {
         return price;
     }
 
+    @Override
+    public String toString() {
+        return "Product{" +
+                "proId=" + proId +
+                ", proName='" + proName + '\'' +
+                ", price=" + price +
+                '}';
+    }
 }
